@@ -20,7 +20,7 @@
 
 # Как запустить приложение?
 
-1. Копируете репозиторий командой git clone (ссылка на репозиторий).
+1. Копируете репозиторий командой `git clone https://github.com/akatsukiHell/weather-django.git`.
 2. Командой `cd weather_forecast` переходите в основую папку проекта.
 3. 
     - Если используете Docker:
@@ -28,8 +28,9 @@
         - После ожидания созания образа запускаете его командой `docker compose up`
         - Чтобы остановить приложение напишите `docker compose down`
     - Если используете терминал:
-        - Прописываете `py manage.py makemigrations` и `py manage.py migrate`
-        - Запускаете приложение командой `py manage.py runserver`
+        - Скачайте зависимоти командой `pip install -r requirements.txt`
+        - Пропишите `py manage.py makemigrations` и `py manage.py migrate` для создания миграций в БД.
+        - Запуустите приложение командой `py manage.py runserver`
     
     Во всех случаях надо перейти в браузере на страницу с приложением: `http://localhost:8000/`. Уже после чего можно проверять его работоспособность.
 
