@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                {% if last_city %}
+                    <div class="last-city-info">
+                        Посмотреть погоду в последнем городе, который вы искали: 
+                        <a href="{% url 'city-weather' city_name=last_city %}">{{ last_city }}</a>
+                    </div>
+                {% endif %}
+                <h1 class="text-center">Узнайте прогноз погоды в вашем городе</h1>
+                <form action="{% url 'search-city' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.name }}
+                    <input type="submit" name="send" value="Искать">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

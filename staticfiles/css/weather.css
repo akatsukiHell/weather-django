@@ -1,0 +1,96 @@
+/* Основные стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px 30px;
+    text-align: center;
+    margin: auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.back-button {
+    display: block;
+    margin-bottom: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Стили для текущей погоды */
+.current-weather {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Стили для заголовка прогноза */
+.forecast-header {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Стили для блока прогноза */
+.forecast-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    overflow-x: auto; /* Добавляем горизонтальный скролл, если не помещается */
+    margin-top: 20px;
+}
+
+.forecast-block {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px 15px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.time {
+    font-size: 16px;
+    color: #a1f309;
+}
+
+.temperature {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f30b0b;
+}

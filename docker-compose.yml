@@ -1,0 +1,21 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: weather_forecast:latest
+    container_name: weather_forecast
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/weather_forecast
+      - static_volume:/weather_forecast/static
+    environment:
+      - DEBUG=True
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             python manage.py runserver 0.0.0.0:8000"
+
+volumes:
+  static_volume:

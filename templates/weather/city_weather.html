@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Погода в {{ city.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/weather.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'index' %}" class="back-button">Назад к поиску</a>
+        <h1>Погода в городе {{ city.name }}</h1>
+        <p>Сегодня <span>{{ current_time|date:"d E Y" }}</span></p>
+        <div class="current-weather">
+            <b>Температура к текущему часу: {{ current_temperature }}°C</b>
+        </div>
+        <div class="forecast-header">
+            <b>Температура в ближайшие часы:</b>
+        </div>
+        <div class="forecast-container">
+            {% for forecast in hour_temp %}
+                <div class="forecast-block">
+                    <span class="time">{{ forecast.date | date:"H:i"}}</span>
+                    <span class="temperature">{{ forecast.temperature_2m }}°C</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
